@@ -65,3 +65,13 @@ header h2 {
     background-color: #f4f4f4;
     border-bottom: 2px solid #ddd;
 }
+
+tfoot {
+    font-weight: bold;
+    background-color: #f4f4f4;
+}
+
+tfoot td {
+    padding: 12px;
+}
+
