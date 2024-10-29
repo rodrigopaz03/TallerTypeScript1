@@ -2,32 +2,26 @@
 import { series } from './data';
 import { Serie } from './Serie';
 
-const tableBody: HTMLElement = document.getElementById('seriesTableBody')!;
-const tableseries: HTMLElement = document.getElementById('series')!;
+let seriesTable: HTMLElement = document.getElementById('series')!;
+let seriesTbody: HTMLElement = document.createElement('tbody');
 
-function mostrarSeries(series: Serie[]) {
+function mostrarSeries(series: Serie[]):void {
 
+    
     series.forEach((serie) => {
-    let row = document.createElement('tr');
-    row.innerHTML = `
+    let trEelement: HTMLElement = document.createElement('tr');
+    trEelement.innerHTML = `
         <td>${serie.id}</td>
         <td>${serie.name}</td>
         <td>${serie.channel}</td>
         <td>${serie.seasons}</td>
     `;
-    tableBody?.appendChild(row);
+    seriesTbody?.appendChild(trEelement);
 
-    const averageSeasons = series.reduce((acc, serie) => acc + serie.seasons, 0) / series.length;
+}); 
 
-  
-    const trAverage = document.createElement("tr");
-    trAverage.innerHTML = `<td colspan="4" style="text-align: center; font-weight: bold;">
-                            Seasons average: ${averageSeasons.toFixed(0)}
-                           </td>`;
-   
-    tableseries.appendChild(trAverage);
+    seriesTable.appendChild(seriesTbody);
 
-
-}); }
+}
 
 mostrarSeries(series);
