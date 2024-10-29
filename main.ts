@@ -1,4 +1,3 @@
-// main.ts
 import { series } from './data';
 import { Serie } from './Serie';
 
@@ -16,7 +15,7 @@ function mostrarSeries(series: Serie[]):void {
         <td>${serie.channel}</td>
         <td>${serie.seasons}</td>
     `;
-    seriesTbody?.appendChild(trEelement);
+    seriesTbody.appendChild(trEelement);
 
 }); 
 
